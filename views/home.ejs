@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム</title>
+</head>
+<div class="app-container">
+<body>
+     <form id="Logout" action="/logout" method="POST">
+            <button>Logout</button>
+        </form>
+    <h1>TODOアプリ</h1>
+    <p><%=username%>さん、ようこそ。   下にタスクを追加していってね。</p>
+    <p id="flash"><%= flashMessage %></p>
+    <form action="/add" method="POST" onsubmit="return Check()">
+        <input id="newtext" type="text" name="task" placeholder="新しいタスクを追加">を
+        <input type="date" name="deadline" placeholder="期限を設定" min="<%= new Date().toISOString().slice(0,10) %>">までにやる！
+        <button type="submit">追加</button>
+    </form>
+    <ul>
+        <% for(let c of homeshow) { 
+            const today = new Date();
+            const deadline = new Date(c.deadline);
+            const diff = Math.ceil((deadline - today) / (1000 * 60 * 60 * 24));
+            let colorClass = '';
+            if (diff <= 1 && diff >= 0) {
+                colorClass = 'danger'; // 今日・1日前
+            } else if (diff <= 3 && diff >= 2) {
+                colorClass = 'warning'; // 2日・3日前
+            }
+        %>
+            <li class="<%= colorClass %>">
+                <span><%= c.task %></span>
+                <span>期限：<%= c.deadline ? c.deadline.toISOString().slice(0,10) : '' %></span>
+                <button id="syousai" onclick="location.href='/show/<%= c.id %>'">todo詳細</button>
+            </li>
+        <% } %>
+    </ul>
+    
+  <script src="/index.js"></script>
+</body>
+</div>
+</html>

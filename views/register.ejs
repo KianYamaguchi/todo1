@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="/showstyle.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="show-container">
+        <form action="/login" method="GET"><button id="nextlogin">ログイン画面へ</button></form>
+    <h1>新規登録</h1>
+    <p>新規登録を行います。以下の情報を入力してください。</p>
+  <div><%= flashMessage %></div>
+    <form action="/register" method="POST">
+    <div>
+        <label for="username">ユーザー名:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+        <label for="email">メールアドレス:</label>
+        <input type="text" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <button id="register">登録</button>
+    </form>
+    </div>
+</body>
+</html>

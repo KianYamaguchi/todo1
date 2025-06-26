@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="/showstyle.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="show-container">
+        <form action="/register" method="GET"><button id="loginnext">新規登録</button></form>
+    <h1>ログイン画面</h1>
+    <div><%= flashMessage %></div>
+    <form action="/login" method="POST">
+    <div>
+        <label for="username">ユーザー名:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <button id ="login">ログイン</button>
+    </form>
+    </div>
+</body>
+</html>

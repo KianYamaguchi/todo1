@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO詳細</title>
+    <link rel="stylesheet" href="/showstyle.css">
+</head>
+<body>
+    <div class="show-container">
+        <h1>TODO詳細</h1>
+        <p>ID: <%= shows.id %></p>
+        <p>タスク: <%= shows.task %></p>
+        <p>期限: <%= shows.deadline %></p>
+
+        <a href="/home">ホームに戻る</a>
+        <a href="/home/<%= shows.id %>/edit">編集</a>
+
+        <form id="complete" action="/home/complete/<%= shows.id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">完了</button>
+        </form>
+
+        <form id="delete" action="/home/<%= shows.id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">削除</button>
+        </form>
+    </div>
+</body>
+</html>
