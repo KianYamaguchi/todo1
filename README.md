@@ -1,7 +1,7 @@
 ![https___img shields io_badge_-TypeScript-000000](https://github.com/user-attachments/assets/912e75d8-f5c0-4bdc-ab3e-e2ec6a3ed824)**Todoアプリを作成しました。**
 
 
-![Uploading https___img.shields.io_badge_<?xml version="1.0" encoding="utf-8"?>
+
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="126.5" height="28" role="img" aria-label="TYPESCRIPT">
   <title>TYPESCRIPT</title>
   <g shape-rendering="crispEdges">
